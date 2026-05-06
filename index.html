@@ -8,9 +8,14 @@ Lottery Ticket-->
     <title>Cprog Scratch-sOffs</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="pages/common/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header></header>
+    <header>
+      <h1 id="headerText">Cprog Scratch-Offs</h1>
+    </header>
     <main class="accentBg" id="mainSect">
       <h1>Welcome to the Cprog Scratch-Offs website!</h1>
       <p>There are 3 scratch-offs below with different prices. As the price increases, the chance of winning decreases but the potential earnings increase. On each scratch-off 3 winning images will be shown on the side. If you scratch off a cell with one of the same pictures, you will earn the amount of money shown in that cell. Once all the cells are scratched off, you will be presented with your earnings for this scratch-off, total earnings from each scratch-off, and a button that will take you back to this page.</p>
@@ -22,13 +27,14 @@ Lottery Ticket-->
         <section class="textSect">
           <h2>$30 Scratch-Offs</h2>
           <p>Maxiumu Win: $1,000,000<br>Chance of Winning: 30% chance each cell<br>Difficulty: easy</p>
-          <div class="buttonDiv"><a href="Pages/SDP/U1_Lab9_SDP.html" class="button">SDP Questions</a></div>
+          <div class="buttonDiv" id="redButton"><a href="Pages/scratchOffPage/scratchOff.html"><h3 id="redLink">Purchase and Play</h3></a></div>
         </section>
     </main>
     <main class="accentBg">
         <section class="textSect">
           <h2>$15 Scratch-Offs</h2>
           <p>Maxiumu Win: $100,000<br>Chance of Winning: 23% chance each cell<br>Difficulty: medium</p> <!--2x chance for 3 random non winning to show up-->
+          <div class="buttonDiv" id="yellowButton"><a href="Pages/scratchOffPage/scratchOff.html"><h3 id="yellowLink">Purchase and Play</h3></a></div>
         </section>
         <section class="imageSect">
           <img src="resources/cells/med/med_beefcakeModulo.png" id="accentImg">
@@ -40,7 +46,8 @@ Lottery Ticket-->
         </section>
         <section class="textSect">
           <h2>$5 Scratch-Offs</h2>
-          <p>Maxiumu Win: $10,000<br>Chance of Winning: 17% chance each cell<br>Difficulty: hard</p> <!--2x chance for 3 random non winning to show up-->
+          <p>Maxiumu Win: $10,000<br>Chance of Winning: 17% chance each cell<br>Difficulty: hard</p> <!--2x chance for all non winning to show up-->
+          <div class="buttonDiv" id="blueButton"><a href="Pages/scratchOffPage/scratchOff.html"><h3 id="blueLink">Purchase and Play</h3></a></div>
         </section>
     </main>
   </body>

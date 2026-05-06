@@ -1,0 +1,22 @@
+body{
+    overflow-y: hidden;
+}
+
+#scratchOff{
+    width: 70vw;
+}
+
+#winners{
+    background-image: linear-gradient(#eef4f2, #91ced0);;
+    width: 30vw;
+}
+
+#winners, #scratchOff{
+   justify-content: center;
+   height: 100vh; 
+}
+
+main{
+    flex-direction: row;
+    background-image: linear-gradient(#eef4f2, #a8e0e2);
+}

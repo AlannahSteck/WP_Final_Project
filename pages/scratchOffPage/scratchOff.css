@@ -7,16 +7,48 @@ body{
 }
 
 #winners{
-    background-image: linear-gradient(#eef4f2, #91ced0);;
     width: 30vw;
 }
 
 #winners, #scratchOff{
+   display: flex;
+   align-items: center;
    justify-content: center;
-   height: 100vh; 
+   height: 80vh; 
 }
 
 main{
     flex-direction: row;
     background-image: linear-gradient(#eef4f2, #a8e0e2);
+}
+
+#scratchOffBox{
+    width: 60vw;
+    align-items: center;
+}
+
+
+#winBox{
+    width: 20vw;
+}
+
+section{
+    background-image: linear-gradient(#1f3434, #2f5d53);
+    height: 40vw;
+    border-radius: 5vw;
+    padding: 1vw;
+}
+.cellContainer{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    justify-content: center;
+}
+
+.cell{
+    background-color: white;
+    margin: 1vw 3.5vw;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 1.5vw;
 }

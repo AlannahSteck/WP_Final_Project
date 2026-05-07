@@ -26,12 +26,6 @@ main{
     color: #eef4f2;
 }
 
-.accentText{
-    color: transparent;
-    background-image: linear-gradient(#eef4f2, #a8e0e2);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
 
 .normalText{
     color: transparent;
@@ -56,7 +50,6 @@ main{
 }
 
 h2{
-    text-decoration: underline;
     font-size: 275%;
 }
 

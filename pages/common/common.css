@@ -39,6 +39,17 @@ h1{
     font-size: 325%;
 }
 
+h2{
+    text-decoration: underline;
+}
+
 h1,h2{
     font-family: "Monoton", sans-serif;
+}
+
+.accentText{
+    color: transparent;
+    background-image: linear-gradient(#eef4f2, #a8e0e2);
+    -webkit-background-clip: text;
+    background-clip: text;
 }

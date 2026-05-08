@@ -45,6 +45,11 @@ section{
     justify-content: center;
 }
 
+.cell{
+    text-align: center;
+    
+}
+
 .cell, .hidden{
     margin: 1vw 3.5vw;
     width: 8vw;
@@ -54,7 +59,6 @@ section{
 }
 
 .hidden{
-    visibility: hidden;
     background-image: linear-gradient(#eef4f2, #a8e0e2);
 }
 

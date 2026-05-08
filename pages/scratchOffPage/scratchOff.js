@@ -7,8 +7,6 @@ function randNum(num){
 }
 
 function genPage(){
-    const diff = sessionStorage.getItem("difficulty")
-    const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
     const scratchOffBox = document.createElement("section");
     scratchOffBox.id = "scratchOffBox";
     scratchOffArea.appendChild(scratchOffBox);
@@ -18,9 +16,7 @@ function genPage(){
         scratchOffBox.appendChild(cellContainer); 
         for (let i=0; i<4; i++){
             const cell = document.createElement("div");
-            const theIndex = Math.floor(Math.random() * imgs.length); 
-            cell.style.backgroundImage = `url(${imgs[theIndex]})`
-            cell.classList.add("hidden", "cell");
+            cell.className = "hidden";
             cell.setAttribute("onclick",`scratch(this)`)
             cellContainer.appendChild(cell); 
         }
@@ -42,12 +38,22 @@ function genPage(){
 
 
 function scratch(cell){
-    console.log("ONCLICK WORKS");
-    unhide(cell)
-}
-
-function unhide(cell){
-    console.log("REACHED");
-    item.classList.remove("hidden")
-    item.removeAttribute("onclick")
+    cell.className = "cell";
+    cell.removeAttribute("onclick")
+    const diff = sessionStorage.getItem("difficulty")
+    const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
+    const theIndex = Math.floor(Math.random() * imgs.length); 
+    cell.style.backgroundImage = `url(${imgs[theIndex]})`
+    const maxWin = Number(sessionStorage.getItem("maxWin"))
+    let win = Math.ceil((Math.pow(Math.random(), 250) * maxWin)/5)*5; 
+    if (win==0 || win==5){
+        const ranNum = Math.floor(Math.random() * 3); 
+        if (ranNum==2){
+            win = 5
+        }
+        else{
+            win = 1
+        }
+    }
+    cell.textContent = "$" + win
 }

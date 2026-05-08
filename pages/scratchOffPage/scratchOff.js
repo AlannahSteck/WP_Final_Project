@@ -1,12 +1,11 @@
 const scratchOffArea = document.getElementById("scratchOff");
 const winnersArea = document.getElementById("winners");
+const diff = sessionStorage.getItem("difficulty")
+const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
 
-function randNum(num){
-    const theIndex = Math.floor(Math.random() * r); 
-    return customersStorage[theIndex]
-}
 
 function genPage(){
+    sessionStorage.setItem("cardWinnings",0);
     const scratchOffBox = document.createElement("section");
     scratchOffBox.id = "scratchOffBox";
     scratchOffArea.appendChild(scratchOffBox);
@@ -40,8 +39,6 @@ function genPage(){
 function scratch(cell){
     cell.className = "cell";
     cell.removeAttribute("onclick")
-    const diff = sessionStorage.getItem("difficulty")
-    const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
     const theIndex = Math.floor(Math.random() * imgs.length); 
     cell.style.backgroundImage = `url(${imgs[theIndex]})`
     const maxWin = Number(sessionStorage.getItem("maxWin"))

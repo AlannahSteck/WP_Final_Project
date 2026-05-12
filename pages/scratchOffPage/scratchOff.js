@@ -20,7 +20,8 @@ function genPage(){
             cellContainer.appendChild(cell); 
         }
     }
-
+    let possibleWins = [...imgs]
+    let pickedWinBoxes = []
     const winBox = document.createElement("section");
     winBox.id = "winBox";
     winnersArea.appendChild(winBox);
@@ -30,9 +31,23 @@ function genPage(){
     winBox.appendChild(heading); 
     for (let i=0; i<3; i++){
         const cell = document.createElement("div");
+        let theIndex = Math.floor(Math.random() * possibleWins.length); 
+        while (pickedWinBoxes.includes(theIndex)){
+            theIndex = Math.floor(Math.random() * possibleWins.length); 
+        }
+        pickedWinBoxes.push(theIndex)
+        cell.style.backgroundImage = `url(${possibleWins[theIndex]})`
         cell.className = "cell";
         winBox.appendChild(cell); 
     }
+
+    const buttonDiv = document.createElement("div");
+    buttonDiv.className = "buttonDiv"
+    buttonDiv.setAttribute("onclick","createPopUp()")
+    const buttonText = document.createElement("h3");
+    buttonText.textContent = "Select New Card"
+    buttonDiv.appendChild(buttonText)
+    winnersArea.appendChild(buttonDiv)
 }
 
 
@@ -53,4 +68,15 @@ function scratch(cell){
         }
     }
     cell.textContent = "$" + win
+    if (sessionStorage.getItem("cardWinnings") == 0){
+    sessionStorage.setItem("cardWinnings",win);
+    }
+    else{
+      sessionStorage.setItem("cardWinnings",win+Number(sessionStorage.getItem("cardWinnings")))  
+    }
+
+}
+
+function createPopUp(){
+    console.log("no new card for you >:D")
 }

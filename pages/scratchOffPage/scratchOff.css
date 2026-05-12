@@ -23,8 +23,9 @@ main{
 }
 
 #scratchOffBox{
-    width: 60vw;
+    width: 50vw;
     justify-content: center;
+    align-items: flex-start;
 }
 
 
@@ -45,6 +46,7 @@ section{
     width: 60vw;
     height: 15vh;
     justify-content: center;
+    margin: 0;
 }
 
 .cell{
@@ -53,7 +55,7 @@ section{
 }
 
 .cell, .hidden{
-    margin: 1vw 3.5vw;
+    margin: 1vw 1vw;
     width: 7vw;
     height: 12.75vh;
     border-radius: 1.5vw;
@@ -67,7 +69,7 @@ section{
 
 
 h2{
-    font-size: 197%;
+    font-size: 155%;
 }
 
 .buttonDiv{

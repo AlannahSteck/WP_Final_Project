@@ -70,6 +70,7 @@ section{
 
 h2{
     font-size: 155%;
+    margin: 0;
 }
 
 .buttonDiv{
@@ -77,4 +78,16 @@ h2{
     border-radius: 5vw;
     margin-top: 4.5vw;
     padding: 0.5vw 2vw;
+}
+
+#popup{
+  color: #af705b;
+  background-color: black;
+  position: fixed;
+  text-align: center;
+  font-size: 155%;
+  padding: 3vh 5vw;
+  justify-self: center;
+  top: 40%;
+  align-self: center;
 }

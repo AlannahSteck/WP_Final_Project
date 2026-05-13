@@ -2,6 +2,8 @@ const scratchOffArea = document.getElementById("scratchOff");
 const winnersArea = document.getElementById("winners");
 const diff = sessionStorage.getItem("difficulty")
 const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
+const body = document.getElementsByTagName("body")[0]
+let chosenWins = []
 
 
 function genPage(){
@@ -68,6 +70,7 @@ function scratch(cell){
         }
     }
     cell.textContent = "$" + win
+    for(let i=0; i<chosenWins.length; i++){
     if (sessionStorage.getItem("cardWinnings") == 0){
     sessionStorage.setItem("cardWinnings",win);
     }
@@ -78,5 +81,26 @@ function scratch(cell){
 }
 
 function createPopUp(){
-    console.log("no new card for you >:D")
+  const popup = document.createElement("div");
+  popup.id = "popup";
+  body.appendChild(popup);
+  const textOne = document.createElement("p");
+  const textTwo = document.createElement("p");
+  textOne.className = "popupText";
+  textTwo.className = "popupText";
+  popup.appendChild(textOne);
+  popup.appendChild(textTwo);
+  textOne.textContent = `Card Winnings: $${sessionStorage.getItem("cardWinnings")}`;
+  textTwo.textContent = `Total Winnings: $${sessionStorage.getItem("totalWinnings")}`;
+
+  const buttonDiv = document.createElement("div");
+  buttonDiv.className = "buttonDiv"
+  const buttonText = document.createElement("h3");
+  const buttonLink = document.createElement("a");
+  buttonLink.href = "../../index.html"
+  buttonText.textContent = "Back to Home"
+  buttonLink.appendChild(buttonText)
+  buttonDiv.appendChild(buttonLink)
+  popup.appendChild(buttonDiv)
+  console.log(sessionStorage)
 }

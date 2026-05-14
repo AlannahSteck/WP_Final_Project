@@ -39,12 +39,14 @@ function genPage(){
         }
         pickedWinBoxes.push(theIndex)
         cell.style.backgroundImage = `url(${possibleWins[theIndex]})`
+        chosenWins.push(`url("${possibleWins[theIndex]}")`)
         cell.className = "cell";
         winBox.appendChild(cell); 
     }
 
     const buttonDiv = document.createElement("div");
     buttonDiv.className = "buttonDiv"
+    buttonDiv.id = "otherButton"
     buttonDiv.setAttribute("onclick","createPopUp()")
     const buttonText = document.createElement("h3");
     buttonText.textContent = "Select New Card"
@@ -71,16 +73,24 @@ function scratch(cell){
     }
     cell.textContent = "$" + win
     for(let i=0; i<chosenWins.length; i++){
-    if (sessionStorage.getItem("cardWinnings") == 0){
-    sessionStorage.setItem("cardWinnings",win);
-    }
-    else{
-      sessionStorage.setItem("cardWinnings",win+Number(sessionStorage.getItem("cardWinnings")))  
+        if (chosenWins[i] == cell.style.backgroundImage){
+            if (sessionStorage.getItem("cardWinnings") == 0){
+                sessionStorage.setItem("cardWinnings",win);
+            }
+            else{
+                sessionStorage.setItem("cardWinnings",win+Number(sessionStorage.getItem("cardWinnings")))  
+            }
+        }
     }
 
 }
 
 function createPopUp(){
+  const theCells = document.getElementsByClassName("hidden");
+  for(let i=0; i<theCells.length; i++){
+    theCells[i].removeAttribute("onclick")
+  }
+
   const popup = document.createElement("div");
   popup.id = "popup";
   body.appendChild(popup);
@@ -90,7 +100,9 @@ function createPopUp(){
   textTwo.className = "popupText";
   popup.appendChild(textOne);
   popup.appendChild(textTwo);
+
   textOne.textContent = `Card Winnings: $${sessionStorage.getItem("cardWinnings")}`;
+  sessionStorage.setItem("totalWinnings",Number(sessionStorage.getItem("cardWinnings"))+Number(sessionStorage.getItem("totalWinnings")))  
   textTwo.textContent = `Total Winnings: $${sessionStorage.getItem("totalWinnings")}`;
 
   const buttonDiv = document.createElement("div");
@@ -102,5 +114,4 @@ function createPopUp(){
   buttonLink.appendChild(buttonText)
   buttonDiv.appendChild(buttonLink)
   popup.appendChild(buttonDiv)
-  console.log(sessionStorage)
 }

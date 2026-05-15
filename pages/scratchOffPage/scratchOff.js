@@ -1,7 +1,7 @@
 const scratchOffArea = document.getElementById("scratchOff");
 const winnersArea = document.getElementById("winners");
 const diff = sessionStorage.getItem("difficulty")
-const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`]
+const imgs = [`../../resources/cells/${diff}/${diff}_beefcakeModulo.png`, `../../resources/cells/${diff}/${diff}_ferretGuy.png`, `../../resources/cells/${diff}/${diff}_negativeGuy.png`, `../../resources/cells/${diff}/${diff}_aero.png`, `../../resources/cells/${diff}/${diff}_modulo.png`, `../../resources/cells/${diff}/${diff}_python.png`, `../../resources/cells/${diff}/${diff}_java.png`]
 const body = document.getElementsByTagName("body")[0]
 let chosenWins = []
 

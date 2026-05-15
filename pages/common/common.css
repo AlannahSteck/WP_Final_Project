@@ -1,4 +1,6 @@
-
+*{
+    font-family: "Capriola", sans-serif;
+}
 
 body, header{
     margin: 0vw;
@@ -23,7 +25,9 @@ main, header{
 header{
     width: 100vw;
     height: 20vh;
-    background-color: rgb(126, 126, 126);
+    background-image: url("../../resources/common/banner.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 20vh;
     justify-content: center;
 }
 
@@ -49,7 +53,7 @@ h1,h2{
 
 .accentText{
     color: transparent;
-    background-image: linear-gradient(#eef4f2, #a8e0e2);
+    background-image: linear-gradient(white, #e7e7e7);
     -webkit-background-clip: text;
     background-clip: text;
 }
